@@ -1,31 +1,18 @@
 import React from "react";
-import useWordGame from "./Hooks/useWordGame";
 import "./App.css";
+import Header from "./components/Header";
+import { Routes, Route } from "react-router-dom";
+import Cart from "./pages/Cart";
+import Photos from "./pages/Photos";
 
 function App() {
-  const {
-    textBoxRef,
-    handleChange,
-    text,
-    isTimeRunning,
-    timeRemaining,
-    startGame,
-    wordCount,
-  } = useWordGame(60);
   return (
-    <div className="App">
-      <h1>How fast do you type?</h1>
-      <textarea
-        ref={textBoxRef}
-        onChange={handleChange}
-        value={text}
-        disabled={!isTimeRunning}
-      />
-      <h4>Time remaining: {timeRemaining}</h4>
-      <button onClick={startGame} disabled={isTimeRunning}>
-        Start
-      </button>
-      <h1>Word count: {wordCount}</h1>
+    <div className="app">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Photos />} />
+        <Route path="cart" element={<Cart />} />
+      </Routes>
     </div>
   );
 }
