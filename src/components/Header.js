@@ -8,7 +8,7 @@ const Header = () => {
     cartItems.length > 0 ? "ri-shopping-cart-fill" : "ri-shopping-cart-line";
   return (
     <header>
-      <Link to="/">
+      <Link to="/PicSomeHome">
         <h1>Pic Some</h1>
       </Link>
       <Link to="cart">
